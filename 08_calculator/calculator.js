@@ -15,18 +15,23 @@ const sum = function(array) {
 };
 
 const multiply = function(array) {
-  let total = 0;
-  for (let num = 0; num < array.length; num++) {
-    total *= array[num];
+  let total = 1;
+  for (let num of array) {
+    total *= num;
   } return total;
+  //or use: return array.length ? array.reduce((total, current) => total * current) : 0;
 };
 
-const power = function() {
-	
+const power = function(num, exp) {
+	return Math.pow(num,exp);
 };
 
-const factorial = function() {
-	
+const factorial = function(num) {
+  if (num === 0 || num === 1)
+    return 1;
+	for (let i = num -1; i >= 1; i--) {
+    num *= i;
+  } return num;
 };
 
 // Do not edit below this line
